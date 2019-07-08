@@ -1,21 +1,22 @@
 package checkbook;
 import java.time.Clock;
-import java.time.Instant;
-import java.time.ZoneId;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;  
 import java.util.Scanner;
 
 public class Checkbook {
     public void mainActivity(){
         
         deposit obj = new deposit();
-        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
         System.out.println("##################################################");
         System.out.println("#                                                #");
         System.out.println("#               CHECK BOOK PROGRAM               #");
         System.out.println("#                                                #");
         System.out.println("##################################################");
         System.out.println("                       CURRENT BALANCE: USD "+obj.Total);
-        System.out.println("                       TIME: ");
+        System.out.println("                    DATE/TIME: "+dtf.format(now));
         System.out.println("1.   Enter 'withdraw' to make a withdraw");
         System.out.println("2.   Enter 'deposit' to make a deposit");
         System.out.println("3.   Enter 'account' to view your Account Summary");
