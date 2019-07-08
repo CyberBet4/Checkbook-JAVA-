@@ -26,6 +26,7 @@ public class deposit {
 } */
     
     public static double Total;
+    public static int count;
     accountSummary obj2 = new accountSummary();
     
     Checkbook obj = new Checkbook();
@@ -44,9 +45,9 @@ public class deposit {
             Total += amnt;
             System.out.println("Deposit Complete! "+java.time.LocalDateTime.now());
             String theTime = dtf.format(now);
-            accountSummary.account[0] = "Deposit Transaction \t\t"+ Double.toString(Total);
+            accountSummary.account[count] = "Transaction [Deposit] \t USD "+ Double.toString(Total)+" Time: "+theTime;
             System.out.println("CURRENT BALANCE: "+Total);
-            
+            count++;
 //            clearConsole();
             obj.mainActivity();
         }
