@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Checkbook {
     public void mainActivity(){
-        
+        accountSummary obj2 = new accountSummary();
         deposit obj = new deposit();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
         LocalDateTime now = LocalDateTime.now();  
@@ -31,6 +31,8 @@ public class Checkbook {
             case "WITHDRAW":  withdraw.withdraw();
             break;
             case "DEPOSIT": obj.deposit();
+            break;
+            case "ACCOUNT": obj2.summary();
             break;
             case "QUIT":    System.exit(0);
             break;
