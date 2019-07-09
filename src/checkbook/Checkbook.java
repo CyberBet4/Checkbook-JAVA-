@@ -28,6 +28,7 @@ public class Checkbook {
         option = option.toUpperCase();
         withdrawal withdraw = new withdrawal();
         switch(option){
+        /* Switch option for the commands used in the program */    
             case "WITHDRAW":  withdraw.withdraw();
             break;
             case "DEPOSIT": obj.deposit();
@@ -42,7 +43,9 @@ public class Checkbook {
         }
     }
     public static void main(String[] args) {
-        /*   Check Book Program   */    
+        /**   Check Book Program   
+         * this block calls the main Activity function ...
+        */    
         Checkbook obj = new Checkbook();
         obj.mainActivity();
     }
