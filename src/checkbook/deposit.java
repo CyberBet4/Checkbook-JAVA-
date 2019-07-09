@@ -43,9 +43,11 @@ public class deposit {
             amnt = input.nextDouble();
         }else{
             Total += amnt;
+//            Clear screen function
             System.out.println("Deposit Complete! "+java.time.LocalDateTime.now());
             String theTime = dtf.format(now);
-            accountSummary.account[count] = "Transaction [Deposit] \t USD "+ Double.toString(Total)+" Time: "+theTime;
+
+            accountSummary.account[count] = "Transaction [Deposit] \t USD "+ Double.toString(amnt)+" Time: "+theTime;
             System.out.println("CURRENT BALANCE: "+Total);
             count++;
 //            clearConsole();
