@@ -1,7 +1,5 @@
 package checkbook;
 
-import static checkbook.deposit.Total;
-
 import static checkbook.deposit.count;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,13 +24,15 @@ public class withdrawal {
         System.out.print("USD ");
         double amnt = input.nextDouble();
         
-//        this block checks if your total amount is less or greater than your
-//            withdraw amount
+//        this block checks if your current balance is less or greater than your
+//            withdraw amount and prompts error if the withdraw is more than
+//            the current balance.
         if(obj.Total >= amnt){
             obj.Total -= amnt;
+//            Clear screen function
             System.out.println("Withdraw Complete! "+java.time.LocalDateTime.now());
             String theTime = dtf.format(now);
-            accountSummary.account[count] = "Transaction [Withdrawal] USD "+ Double.toString(Total)+" Time: "+theTime;
+            accountSummary.account[count] = "Transaction [Withdrawal] USD "+ Double.toString(amnt)+" Time: "+theTime;
             System.out.println("Your New Balance is: USD "+obj.Total);
             count++;
             objcheck.mainActivity();
