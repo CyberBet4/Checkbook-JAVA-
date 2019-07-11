@@ -5,6 +5,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Checkbook {
+    public static double round(double value, int places) {
+    if (places < 0) throw new IllegalArgumentException();
+
+    long factor = (long) Math.pow(10, places);
+    value = value * factor;
+    long tmp = Math.round(value);
+    return (double) tmp / factor;
+    }
+    
     public void mainActivity(){
         accountSummary obj2 = new accountSummary();
         deposit obj = new deposit();
@@ -15,7 +24,7 @@ public class Checkbook {
         System.out.println("#               CHECK BOOK PROGRAM               #");
         System.out.println("#                                                #");
         System.out.println("##################################################");
-        System.out.println("                       CURRENT BALANCE: USD "+obj.Total);
+        System.out.println("                       CURRENT BALANCE: USD "+round(deposit.Total, 2));
         System.out.println("                    DATE/TIME: "+dtf.format(now));
         System.out.println("1.   Enter 'withdraw' to make a withdraw");
         System.out.println("2.   Enter 'deposit' to make a deposit");
