@@ -4,27 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class deposit {
-/** public final static void clearConsole()
-{
-    try
-    {
-        final String os = System.getProperty("os.name");
-
-        if (os.contains("Windows"))
-        {
-            Runtime.getRuntime().exec("cls");
-        }
-        else
-        {
-            Runtime.getRuntime().exec("clear");
-        }
-    }
-    catch (final Exception e)
-    {
-        //  Handle any exceptions.
-    }
-} */
-    
+   
     public static double Total;
     public static int count;
     accountSummary obj2 = new accountSummary();
@@ -44,13 +24,12 @@ public class deposit {
         }else{
             Total += amnt;
 //            Clear screen function
-            System.out.println("Deposit Complete! "+java.time.LocalDateTime.now());
+            System.out.println("Deposit Complete! "+dtf.format(now));
             String theTime = dtf.format(now);
 
             accountSummary.account[count] = "Transaction [Deposit] \t USD "+ Double.toString(amnt)+" Time: "+theTime;
-            System.out.println("CURRENT BALANCE: "+Total);
+            System.out.println("CURRENT BALANCE: "+Checkbook.round(Total, 2));
             count++;
-//            clearConsole();
             obj.mainActivity();
         }
     }
